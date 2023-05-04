@@ -1,0 +1,275 @@
+<!-- javaScript Starts here -->
+<script>
+    var para_g="";
+    var para_p=0;
+    // function for the grades
+    function abm(para_total){
+        if (para_total >=80 && para_total<=100){
+            para_g="A+";
+            para_p=5.00;
+            }
+        else if (para_total >=70 && para_total<=79){
+            para_g="A";
+            para_p=4.00;
+            }
+        else if (para_total >=60 && para_total<=69){
+            para_g="A-";
+            para_p=3.50;
+            }
+        else if (para_total >=50 && para_total<=59){
+            para_g="B";
+            para_p=3.00;
+            }
+        else if (para_total >=40 && para_total<=49){
+            para_g="C";
+            para_p=2.00;
+            }
+        
+        else if (para_total >=0 && para_total<=39){
+            para_g="F";
+            para_p=0.00;
+        }
+        else{
+            alert("WRONG INPUT!!! Your input should be numbers and the total mark should be between 1 to 100.");
+        } 
+
+    }
+    //functions for individual subject 
+    function cf(){
+        var para_a= parseInt(document.getElementById("btm").value);
+        var para_b= parseInt(document.getElementById("bpm").value);
+        var para_t=para_a+para_b;
+        abm(para_t);
+        document.getElementById("btotal").value=para_t;
+        document.getElementById("bgrade").value=para_g;
+        document.getElementById("bpoint").value=para_p;
+
+    }
+
+    function english(){
+        var para_a= parseInt(document.getElementById("etm").value);
+        var para_b= parseInt(document.getElementById("epm").value);
+        var para_t=para_a+para_b;
+        abm(para_t);
+        document.getElementById("etotal").value=para_t;
+        document.getElementById("egrade").value=para_g;
+        document.getElementById("epoint").value=para_p;
+
+    }
+
+    function physics(){
+        var para_a= parseInt(document.getElementById("ptm").value);
+        var para_b= parseInt(document.getElementById("ppm").value);
+        var para_t=para_a+para_b;
+        abm(para_t);
+        document.getElementById("ptotal").value=para_t;
+        document.getElementById("pgrade").value=para_g;
+        document.getElementById("ppoint").value=para_p;
+
+    }
+
+    function chemistry(){
+        var para_a= parseInt(document.getElementById("ctm").value);
+        var para_b= parseInt(document.getElementById("cpm").value);
+        var para_t=para_a+para_b;
+        abm(para_t);
+        document.getElementById("ctotal").value=para_t;
+        document.getElementById("cgrade").value=para_g;
+        document.getElementById("cpoint").value=para_p;
+
+    }
+
+    function ict(){
+        var para_a= parseInt(document.getElementById("itm").value);
+        var para_b= parseInt(document.getElementById("ipm").value);
+        var para_t=para_a+para_b;
+        abm(para_t);
+        document.getElementById("itotal").value=para_t;
+        document.getElementById("igrade").value=para_g;
+        document.getElementById("ipoint").value=para_p;
+
+    }
+
+
+    // function for calculating total
+    function calc_total(){
+        var a= parseInt(document.getElementById("btotal").value);
+        var b=parseInt(document.getElementById("etotal").value);
+        var c=parseInt(document.getElementById("ptotal").value);
+        var d=parseInt(document.getElementById("ctotal").value);
+        var e=parseInt(document.getElementById("itotal").value);
+
+        var point_a= parseFloat(document.getElementById("bpoint").value); 
+        var point_b= parseFloat(document.getElementById("epoint").value); 
+        var point_c= parseFloat(document.getElementById("ppoint").value); 
+        var point_d= parseFloat(document.getElementById("cpoint").value); 
+        var point_e= parseFloat(document.getElementById("ipoint").value); 
+
+        var grade_a=document.getElementById("bgrade").value;
+        var grade_b=document.getElementById("egrade").value;
+        var grade_c=document.getElementById("pgrade").value;
+        var grade_d=document.getElementById("cgrade").value;
+        var grade_e=document.getElementById("igrade").value;
+
+        var z=a+b+c+d+e;
+        document.getElementById("totalmark").value=z;
+
+        if(a<40 || b<40 || c<40 || d<40 || e<40){
+            document.getElementById("totalgpa").value="0.00";
+
+        }else{
+            var point_z=((point_a+point_b+point_c+point_d+point_e)/5);
+        document.getElementById("totalgpa").value=point_z;
+
+        }
+        
+
+        if(grade_a=="F" || grade_b=="F" || grade_c=="F" || grade_d=="F" || grade_e=="F" ){
+            document.getElementById("totalgrade").value="F";
+        }else{
+            if(point_z>=2 && point_z<3){
+            document.getElementById("totalgrade").value="C";
+        }
+        else if(point_z>=3 && point_z<3.5){
+            document.getElementById("totalgrade").value="B";
+        }
+        else if(point_z>=3.5 && point_z<4){
+            document.getElementById("totalgrade").value="A-";
+        }
+        else if(point_z>=4 && point_z<5){
+            document.getElementById("totalgrade").value="A";
+        }
+        else if(point_z==5){
+            document.getElementById("totalgrade").value="A+";
+        }
+
+        }
+       
+
+    }
+</script>
+<!-- JavaScript ends -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark sheet</title>
+
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>STUDENT MARK SHEET</h1>
+        <p>This is a system for the students to calculate their grade and total mark. <br> 
+        Please insert your practical and theory mark, after calculating each subject you can calculate total grade and point. <br>
+        The pass mark is 40 </p>
+    </header>
+    <Section class="sec1">
+         <!-- for computer fundamentals  -->
+    <table class="tb1">
+        <tr>
+            <h3>COMPUTER FUNDAMENTALS</h3> 
+            <td>Theory Mark <br><input type="number" id="btm"></td>
+            <td>Practical Mark <br><input type="number" id="bpm"></td>
+            <td>Total Mark <br><input type="number" id="btotal"></td>
+            <td>Grade <br><input type="text" id="bgrade"></td>
+            <td>Point <br><input type="number"id=bpoint></td>
+            <td><button onclick="cf()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for english  -->
+    <table class="tb1">
+        <tr>
+            <h3>ENGLISH</h3> 
+            <td>Theory Mark <br><input type="number" id="etm"></td>
+            <td>Practical Mark <br><input type="number" id="epm"></td>
+            <td>Total Mark <br><input type="number" id="etotal"></td>
+            <td>Grade <br><input type="text" id="egrade"></td>
+            <td>Point <br><input type="number"id="epoint"></td>
+            <td><button onclick="english()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for physics  -->
+    <table class="tb1">
+        <tr>
+            <h3>PHYSICS</h3> 
+            <td>Theory mark <br><input type="number" id="ptm"></td>
+            <td>Practical Mark <br><input type="number" id="ppm"></td>
+            <td>Total Mark <br><input type="number" id="ptotal"></td>
+            <td>Grade <br><input type="text" id="pgrade"></td>
+            <td>Point <br><input type="number"id="ppoint"></td>
+            <td><button onclick="physics()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for chemisty  -->
+    <table class="tb1">
+        <tr>
+            <h3>CHEMISTRY</h3> 
+            <td>Theory Mark <br><input type="number" id="ctm"></td>
+            <td>Practiacl Mark <br><input type="number" id="cpm"></td>
+            <td>Total Mark <br><input type="number" id="ctotal"></td>
+            <td>Grade <br><input type="text" id="cgrade"></td>
+            <td>Point <br><input type="number"id="cpoint"></td>
+            <td><button onclick="chemistry()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+       <!-- for Biology  -->
+       <table class="tb1">
+        <tr>
+            <h3>BIOLOGY</h3> 
+            <td>Theory Mark <br><input type="number" id="itm"></td>
+            <td>Practical Mark <br><input type="number" id="ipm"></td>
+            <td>Total Mark <br><input type="number" id="itotal"></td>
+            <td>Grade <br><input type="text" id="igrade"></td>
+            <td>Point <br><input type="number"id="ipoint"></td>
+            <td><button onclick="ict()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- calculatig total  -->
+    <table class="lower tb1">
+        <tr>
+            <td colspan="3"><button class="btn" onclick="calc_total()">CALCULATE TOTAL</button></td>
+        </tr>
+        <tr>
+            <td>total mark <br><input type="text" id="totalmark"></td>
+            <td>final GPA <br><input type="text" id="totalgpa"></td>
+            <td> final Grade <br><input type="text" id="totalgrade"></td>
+
+        </tr>
+        
+
+    </table>
+
+    </Section>
+   
+    
+    
+</body>
+</html>
