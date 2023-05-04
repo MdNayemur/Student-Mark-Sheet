@@ -1,0 +1,132 @@
+<!-- javaScript Starts here -->
+
+<!-- JavaScript ends -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- adding css -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- adding js -->
+    <script src="script.js"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mark sheet</title>
+
+
+
+</head>
+
+
+<body>
+    <header>
+        <h1>STUDENT MARK SHEET</h1>
+        <p>This is a system for the students to calculate their grade and total mark. <br> 
+        Please insert your practical and theory mark, after calculating each subject you can calculate total grade and point. <br>
+        The pass mark is 40 </p>
+    </header>
+    <Section class="sec1">
+         <!-- for computer fundamentals  -->
+    <table class="tb1">
+        <tr>
+            <h3>COMPUTER FUNDAMENTALS</h3> 
+            <td>Theory Mark <br><input type="number" id="btm"></td>
+            <td>Practical Mark <br><input type="number" id="bpm"></td>
+            <td>Total Mark <br><input type="number" id="btotal"></td>
+            <td>Grade <br><input type="text" id="bgrade"></td>
+            <td>Point <br><input type="number"id=bpoint></td>
+            <td><button onclick="cf()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for english  -->
+    <table class="tb1">
+        <tr>
+            <h3>ENGLISH</h3> 
+            <td>Theory Mark <br><input type="number" id="etm"></td>
+            <td>Practical Mark <br><input type="number" id="epm"></td>
+            <td>Total Mark <br><input type="number" id="etotal"></td>
+            <td>Grade <br><input type="text" id="egrade"></td>
+            <td>Point <br><input type="number"id="epoint"></td>
+            <td><button onclick="english()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for physics  -->
+    <table class="tb1">
+        <tr>
+            <h3>PHYSICS</h3> 
+            <td>Theory mark <br><input type="number" id="ptm"></td>
+            <td>Practical Mark <br><input type="number" id="ppm"></td>
+            <td>Total Mark <br><input type="number" id="ptotal"></td>
+            <td>Grade <br><input type="text" id="pgrade"></td>
+            <td>Point <br><input type="number"id="ppoint"></td>
+            <td><button onclick="physics()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- for chemisty  -->
+    <table class="tb1">
+        <tr>
+            <h3>CHEMISTRY</h3> 
+            <td>Theory Mark <br><input type="number" id="ctm"></td>
+            <td>Practiacl Mark <br><input type="number" id="cpm"></td>
+            <td>Total Mark <br><input type="number" id="ctotal"></td>
+            <td>Grade <br><input type="text" id="cgrade"></td>
+            <td>Point <br><input type="number"id="cpoint"></td>
+            <td><button onclick="chemistry()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+       <!-- for Biology  -->
+       <table class="tb1">
+        <tr>
+            <h3>BIOLOGY</h3> 
+            <td>Theory Mark <br><input type="number" id="itm"></td>
+            <td>Practical Mark <br><input type="number" id="ipm"></td>
+            <td>Total Mark <br><input type="number" id="itotal"></td>
+            <td>Grade <br><input type="text" id="igrade"></td>
+            <td>Point <br><input type="number"id="ipoint"></td>
+            <td><button onclick="ict()" class="btn">CALCULATE</button></td>
+            
+        </tr>
+      
+    </table>
+
+    <!-- calculatig total  -->
+    <table class="lower tb1">
+        <tr>
+            <td colspan="3"><button class="btn" onclick="calc_total()">CALCULATE TOTAL</button></td>
+        </tr>
+        <tr>
+            <td>total mark <br><input type="text" id="totalmark"></td>
+            <td>final GPA <br><input type="text" id="totalgpa"></td>
+            <td> final Grade <br><input type="text" id="totalgrade"></td>
+
+        </tr>
+        
+
+    </table>
+
+    </Section>
+   
+    
+    
+</body>
+</html>
